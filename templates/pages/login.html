@@ -1,0 +1,125 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> LOGIN | XYNOSHARE</title>
+    <link rel="stylesheet" href="{% static 'loginset/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'loginset/css/fontawsom-all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'loginset/css/style.css' %}" />
+</head>
+
+<body>
+    <div class="container-fluid ">
+       <header>
+           <div class="container">
+               <div class="row">
+                   <div class="col-md-3">
+                       <a href="../home" style="font-size:30px;">XYNOSHARE</a>
+                        <a data-toggle="collapse" data-target="#menu" href="#menu" ><i class="fas d-block d-md-none small-menu fa-lock"></i></a>
+                   </div>
+                   <div id="menu" class="col-md-9 d-none d-md-block">
+                       <form action="login" method="post">
+                       {% csrf_token %}
+                       <div class="row form-ro">
+                         
+                           <div class="col-md-5">
+                               <input placeholder="Enter User Name" name="username" type="text" class="form-control form-control-sm">
+                           </div>
+                           <div class="col-md-5">
+                               <input placeholder="Enter Password" name="password" type="Password" class="form-control form-control-sm">
+                           </div>
+                           <div class="col-md-2">
+                               <input type="submit" class="btn btn-info btn-sm">
+                           </div>
+                           
+                       </div>
+                       </form>
+                   </div>
+               </div>
+           </div>
+       </header>
+           
+           <div class="register">
+               <div class="container">
+                  <div class="row">
+                      <div class="col-lg-7 col-md-6">
+                           <div class="ditk-inf sup-oi">
+                                <h2 class="w-100">Welcome <br>Xynoshare</h2>
+                                <p>Our Goal is Post The News Which is Really Worth for You And always try to provide Rich Content. Well in This Time its New But time to time we will grow with our hardwork.</p>
+                                
+                            </div> 
+                       </div>
+                       <div class="col-lg-5 col-md-6 ">
+                           <div class="register-box">
+                               <h2>New Registeration</h2>
+                               <form action="register" method="post">
+                               {% csrf_token %}
+                               <div class="row form-row">
+                                   <div class="col-md-4">
+                                       <label for="">First Name</label>
+                                       <span>:</span>
+                                   </div>
+                                   <div class="col-md-8">
+                                       <input type="text" name="first_name" placeholder="Enter First Name" class="form-control form-control-sm">
+                                   </div>
+                               </div>
+                               <div class="row form-row">
+                                   <div class="col-md-4">
+                                       <label for="">Last Name</label>
+                                       <span>:</span>
+                                   </div>
+                                   <div class="col-md-8">
+                                       <input type="text" name="last_name" placeholder="Enter Last Name" class="form-control form-control-sm">
+                                   </div>
+                               </div>
+                               <div class="row form-row">
+                                   <div class="col-md-4">
+                                       <label for="">Username</label>
+                                       <span>:</span>
+                                   </div>
+                                   <div class="col-md-8">
+                                       <input type="text" name="username" placeholder="Enter Username" class="form-control form-control-sm">
+                                   </div>
+                               </div>
+                               <div class="row form-row">
+                                   <div class="col-md-4">
+                                       <label for="">Enter Password</label>
+                                       <span>:</span>
+                                   </div>
+                                   <div class="col-md-8">
+                                       <input type="password" name="password" placeholder="Enter Password" class="form-control form-control-sm">
+                                   </div>
+                               </div>
+                               <div class="row form-row">
+                                   <div class="col-md-4">
+                                      
+                                   </div>
+                                   <div class="col-md-8">
+                                       <input type="submit" class='btn btn-info'>
+                                   </div>
+                               </div>
+                               </form>
+                           </div>
+                           
+                       </div>
+                  </div>
+               </div>
+           </div>
+            <div class="foter-credit">
+                <a>Copyright &copy; 2021 XYNOSHARE</a>  
+            </div>
+            
+    </div>
+   
+</body>
+
+<script src="{% static 'loginset/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'loginset/js/popper.min.js' %}"></script>
+<script src="{% static 'loginset/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'loginset/js/script.js' %}"></script>
+
+
+</html>

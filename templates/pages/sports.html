@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sports | Xynoshare</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+ <header id="header" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h1><a href="home">XYNOSHARE</a></h1>
+      </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li ><a href="home">Home</a></li>
+          <li class="active"><a class="drop" href="news">News | Sports</a>
+            <ul>
+              <li><a href="economy">Economy</a></li>
+              <li><a href="international">International</a></li>
+              <li><a href="technology">Technology</a></li>
+              <li><a href="sports">Sports</a></li>
+            </ul>
+          </li>
+          
+          {% if user.is_authenticated %}
+            <li><a class="drop">{{user.first_name}}</a>
+            <ul>
+              <li><a href="accounts/logout">Logout</a></li>
+            </ul>
+          </li>
+            {% else %}
+            <li><a href="accounts/login">LogIn</a></li>
+            {% endif %}
+
+        </ul>
+      </nav>
+      <!-- ################################################################################################ -->
+    </header>
+
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+
+  {% for article in article %}
+  {% if article.sports %}
+    
+    <!-- ################################################################################################ -->
+    <article>
+    <div class="content three_quarter" id='{{article.id}}'> 
+      <h1>{{article.title}}</h1>
+      <time class="font-xs block btmspace-10">{{article.date}}</time>
+      <img class="imgr borderedbox inspace-5" src="media/{{article.img}}" alt="">
+      <p>{{article.description}}</p>
+    </div>
+  </article>
+    <!-- ################################################################################################ -->
+
+    {% endif %}
+    {% endfor %}
+    
+    <!-- ################################################################################################ -->
+    <article>
+    <div class="content three_quarter"> 
+      <h1>Tokyo Olympics 2021 Live Updates: Golfer Aditi Ashok slips to 4th place, one hole left to play</h1>
+      <time class="font-xs block btmspace-10">7<sup>th</sup> AUG 2021</time>
+      <img class="imgr borderedbox inspace-5" src="{% static 'images/demo/aditiashok.jpeg' %}" alt="">
+      <p>India is eyeing historic medals from golf and athletics, apart from one more in wrestling, as Aditi Ashok, Neeraj Chopra and Bajrang Punia make a final push to turn Tokyo 2020 into India's most successful Olympic campaign. Stay with Times of India to get all the live updates on Olympics 2021, India Events at Tokyo Olympics, Results, Medal Table and more on Times of India</p>
+      <p>As the finish approached but before the medals were decided there was a lot of drama over whether the final round could be completed on Saturday. Late on Friday there was talk of a tropical storm which might mean no play on Saturday and push the action to Sunday. The organisers found a way with a 6.30 am early start on Saturday but then there was threat of lightning with the final group on 17th hole.</p>
+    </div>
+  </article>
+    <!-- ################################################################################################ -->
+
+    <!-- ################################################################################################ -->
+  <article>
+    <div class="content three_quarter"> 
+      <h1>Tokyo 2020: Neeraj Chopra soars to end generations of heartache</h1>
+      <time class="font-xs block btmspace-10">6<sup>th</sup> AUG 2021</time>
+      <img class="imgr borderedbox inspace-5" src="{% static 'images/demo/neeraj.jpeg' %}" alt="">
+      <p>More than half a century after Milkha Singh looked back for a fraction of a second and 37 years after PT Usha forgot to dip at the finish line resulting in heart-breaking fourth-place finishes, the glorious flight of Neeraj Chopra’s javelin gave the country its first-ever track and field medal, a gold.</p>
+      <p>Chopra’s speed on the runway, the wide block, long pull of the throwing arm, wonderful alignment of the spear with his motor movements and balance came together on the day it mattered most as he was the supreme thrower at the Olympic Stadium. The Indian looked relaxed in a white headband and fluidly threw 87.03 metres in his first attempt. Chopra’s turn was second on the roster for the first three rounds (after which the bottom four get eliminated) but it was clear he was the man to beat.</p>
+    </div>
+  </article>
+    <!-- ################################################################################################ -->
+
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+
+<div class="wrapper row4">
+  <footer id="footer" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="one_third first">
+      <h6 class="heading">ABOUT US</h6>
+      <p>We are team of xynoshare</p>
+      <p class="btmspace-15">Our Goal is Post The News Which is Really Worth for You And always try to provide Rich Content. Well in This Time its New But time to time we will grow with our hardwork.</p>
+      <ul class="faico clear">
+        <li><a class="faicon-facebook" href="http://facebook.com/sailendradash"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="faicon-twitter" href="http://twitter.com/sailendradash"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="faicon-linkedin" href="https://linkedin.com/in/sailendra-dash-713023218/"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="faicon-google-plus" href="https://plus.google.com/sailendradash"><i class="fa fa-google-plus"></i></a></li>
+      </ul>
+    </div>
+    <div class="one_third">
+      <h6 class="heading">Contact Us</h6>
+      <ul class="nospace linklist contact">
+        <li><i class="fa fa-map-marker"></i>
+          <address>
+          Berhampur &amp; Ganjam, Odisha
+          </address>
+        </li>
+        <li><i class="fa fa-phone"></i> +91 6371172432</li>
+        <li><i class="fa fa-fax"></i> +91 7609055131</li>
+        <li><i class="fa fa-envelope-o"></i> sailendradash@protonmail.com</li>
+      </ul>
+    </div>
+    <div class="one_third">
+      <h6 class="heading">Support Us</h6>
+      <ul class="nospace linklist">
+        <li>
+          <article>
+            <h2 class="nospace font-x1"><a href="#">How You Can Support?</a></h2>
+            <time class="font-xs block btmspace-10">Thursday, 5<sup>th</sup> AUG 2021</time>
+            <p class="nospace">This Site is Running By Public Funds, So For Our Hard Work of Provide You News You can Support Us.&hellip;</p>
+          </article>
+        </li>
+        <footer><a class="btn" href="https://www.paypal.com/paypalme/sailendradash">DONATE&raquo;</a></footer>
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+
+
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p align="center">Copyright &copy; 2021 <a href="#">XYNOSHARE</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="{% static 'layout/scripts/jquery.min.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.backtotop.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
+</body>
+</html>

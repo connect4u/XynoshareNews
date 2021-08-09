@@ -1,0 +1,261 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>News | Xynoshare</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+ <header id="header" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h1><a href="home">XYNOSHARE</a></h1>
+      </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li ><a href="home">Home</a></li>
+          <li class="active"><a class="drop" href="news">News</a>
+            <ul>
+              <li><a href="economy">Economy</a></li>
+              <li><a href="international">International</a></li>
+              <li><a href="technology">Technology</a></li>
+              <li><a href="sports">Sports</a></li>
+            </ul>
+          </li>
+          
+          {% if user.is_authenticated %}
+            <li><a class="drop">{{user.first_name}}</a>
+            <ul>
+              <li><a href="accounts/logout">Logout</a></li>
+            </ul>
+          </li>
+            {% else %}
+            <li><a href="accounts/login">LogIn</a></li>
+            {% endif %}
+
+        </ul>
+      </nav>
+      <!-- ################################################################################################ -->
+    </header>
+
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="sidebar one_quarter first"> 
+      <!-- ################################################################################################ -->
+      <h6>News Categories</h6>
+      <nav class="sdb_holder">
+        <ul>
+          <li><a href="economy">Economy</a></li>
+          <li><a href="international">International</a></li>
+          <li><a href="technology">Technology</a></li>
+          <li><a href="sports">Sports</a></li>
+        </ul>
+      </nav>
+      <div class="sdb_holder">
+
+      </div>
+      <div class="sdb_holder">
+      
+      </div>
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+
+    {% for article in article %}
+    
+    <!-- ################################################################################################ -->
+    <article>
+    <div class="content three_quarter" id='{{article.id}}'> 
+      <h1>{{article.title}}</h1>
+      <time class="font-xs block btmspace-10">{{article.date}}</time>
+      <img class="imgr borderedbox inspace-5" src="media/{{article.img}}" alt="">
+      <p>{{article.description}}</p>
+    </div>
+  </article>
+    <!-- ################################################################################################ -->
+
+    {% endfor %}
+
+
+    <!-- ################################################################################################ -->
+    <article>
+    <div class="content three_quarter" id="7623"> 
+      <h1>Boost exports to $400bn this year: PM to businessmen, envoys</h1>
+      <time class="font-xs block btmspace-10">7<sup>th</sup> AUG 2021</time>
+      <img class="imgl borderedbox inspace-5" src="{% static 'images/demo/modiji2.jpeg' %}" alt="">
+      <p>NEW DELHI: PM Narendra Modi on Friday said that the decision to drop the provision of retrospective taxation from the statute demonstrated the Centre's commitment to provide stability of investment climate and also signalled policy consistency. The statement came hours after the Lok Sabha passed the Bill meant to end tax disputes with 17 companies, including high profile ones such as Vodafone and Cairn Plc.</p>
+      <p>Addressing exporters, businesses, states and Indian ambassadors in foreign missions at an event to work out a strategy to scale up India's exports to $400 billion this year, the PM said exporters know very well the importance of stability. "It sends a clear message to all investors that not only does India offer new opportunities, but a decisive government has the will to fulfil its promise," Modi said while talking about the legislation. He also said that the Centre was working closely with states to minimise the regulatory burden.</p>
+      <p>While promising all possible support from the government to boost exports, Modi exhorted every stakeholder to play their role, with states governments and Indian missions advised to work together in identifying new product segments and markets.</p>
+      <p>Modi said there were positive signs in the economy. "Today, we are not just seeing signs of recovery, but there are positive signs on high growth too. So, this is a good time to set high targets for exports."
+        The $400 billion goal is seen to be ambitious as the government is looking to boost exports by 37% over last year's level. While seeking to corner a larger share of the global pie, the PM said there were four key focus areas to provide a thrust - stepping up manufacturing, removing logistical and transport-related challenges, working closely with exporters and getting international markets for Indian products.</p>
+    </div>
+  </article>
+    <!-- ################################################################################################ -->
+
+    <!-- ################################################################################################ -->
+    <article>
+    <div class="content three_quarter" id="7624"> 
+      <h1>Tokyo Olympics 2021 Live Updates: Golfer Aditi Ashok slips to 4th place, one hole left to play</h1>
+      <time class="font-xs block btmspace-10">7<sup>th</sup> AUG 2021</time>
+      <img class="imgr borderedbox inspace-5" src="{% static 'images/demo/aditiashok.jpeg' %}" alt="">
+      <p>India is eyeing historic medals from golf and athletics, apart from one more in wrestling, as Aditi Ashok, Neeraj Chopra and Bajrang Punia make a final push to turn Tokyo 2020 into India's most successful Olympic campaign. Stay with Times of India to get all the live updates on Olympics 2021, India Events at Tokyo Olympics, Results, Medal Table and more on Times of India</p>
+      <p>As the finish approached but before the medals were decided there was a lot of drama over whether the final round could be completed on Saturday. Late on Friday there was talk of a tropical storm which might mean no play on Saturday and push the action to Sunday. The organisers found a way with a 6.30 am early start on Saturday but then there was threat of lightning with the final group on 17th hole.</p>
+    </div>
+  </article>
+    <!-- ################################################################################################ -->
+
+    <!-- ################################################################################################ -->
+    <article>
+    <div class="content three_quarter" id="7625"> 
+      <h1>Airtel Says Service Deactivation Message Was Sent Wrongly to Some Delhi Users</h1>
+      <time class="font-xs block btmspace-10">6<sup>th</sup> AUG 2021</time>
+      <img class="imgr borderedbox inspace-5" src="{% static 'images/demo/airtel.png' %}" alt="">
+      <p>Airtel on Friday wrongly informed some of its customers about the deactivation of their services and discontinuation of outgoing calls on their numbers. The telco had sent an SMS message asking the affected customers to recharge their accounts to continue their outgoing calls. However, Airtel later clarified to the users that the message was sent due to a technical error. Gadgets 360 reached out to the operator for clarity on the issue and was informed that it occurred specifically for some users in the Delhi region and didn't impact Airtel customers in other parts of the country.</p>
+      <p>“Your outgoing services have been discontinued. To continue, Click airtel.in/prepaid-recharge or dial *121*51#,” Airtel had said in the original text message.Hours after its circulation, the operator generated a clarification saying that the wrong message about the deactivation of services might have been received due to a technical problem. It also asked the affected customers to ignore the content of the message and apologised for the inconvenience caused.</p>
+    </div>
+  </article>
+    <!-- ################################################################################################ -->
+
+  <!-- ################################################################################################ -->
+  <article>
+    <div class="content three_quarter" id="7626"> 
+      <h1>Amazon Orders All US Employees to Mask Up at Work as COVID-19 Delta Variant Cases Surge</h1>
+      <time class="font-xs block btmspace-10">6<sup>th</sup> AUG 2021</time>
+      <img class="imgr borderedbox inspace-5" src="{% static 'images/demo/amazon.png' %}" alt="">
+      <p>Amazon.com has ordered all US employees to wear a mask at work regardless of their vaccination status, as the highly infectious Delta variant of COVID-19 sweeps the country.Companies across the United States have tightened their defenses against the virus, after the Delta variant forced the US public health agency to reverse course and insist on even fully vaccinated individuals wearing masks."We are monitoring the situation closely and will continue to follow local government guidance and work closely with leading medical healthcare professionals, gathering their advice and recommendations as we go forward to ensure our buildings are optimized for the safety of our teams," an Amazon spokesperson said in a statement on Friday.</p>
+      <p>Last month, big techs including Alphabet's Google and Facebook asked US employees to get vaccinated to step into offices, while Twitter said it was shutting its reopened offices in the country.Amazon also extended its work-from-home dates for US employees till January 3.Earlier this week, coronavirus cases worldwide surpassed 200 million while US cases stood at 35.62 million on Thursday, according to a Reuters tally.</p>
+    </div>
+  </article>
+    <!-- ################################################################################################ -->
+
+  <!-- ################################################################################################ -->
+  <article>
+    <div class="content three_quarter" id="7627"> 
+      <h1>China’s space station emerges as competitor to commercial ventures</h1>
+      <time class="font-xs block btmspace-10">6<sup>th</sup> AUG 2021</time>
+      <img class="imgr borderedbox inspace-5" src="{% static 'images/demo/chinaspace.jpg' %}" alt="">
+      <p>WASHINGTON — Companies involved with commercial activities on the International Space Station or planning their own space stations may face a new competitor in China’s new space station.
+
+        During a presentation at the ISS Research and Development Conference Aug. 4, Jeff Manber, chief executive of Nanoracks, said his company has already lost business to China and its space station.
+        
+        “I lost a customer, my first customer that I lost going to the Chinese space station,” he said. “We’re in a competition now.”
+        
+        He did not identify the customer or what they had planned to do. Nanoracks has several lines of business on the ISS today, from hosting experiments and external payloads to using the station as a platform for launching small satellites.</p>
+      <p>Chinese officials have said they are open to cooperating with other countries regarding use of the station. Ji Qiming, assistant director of the China Manned Space Agency, told China Daily in June that it had selected nine scientific projects from 17 countries to fly on the station, and was working with the United Nations Office for Outer Space Affairs to identify others. That could also include flying astronauts from other countries to the station.</p>
+    </div>
+  </article>
+    <!-- ################################################################################################ -->
+
+  <!-- ################################################################################################ -->
+  <article>
+    <div class="content three_quarter" id="7628"> 
+      <h1>Ontario’s government invests in Lightspeed constellation</h1>
+      <time class="font-xs block btmspace-10">6<sup>th</sup> AUG 2021</time>
+      <img class="imgr borderedbox inspace-5" src="{% static 'images/demo/ontario.jpg' %}" alt="">
+      <p>TAMPA, Fla. — Telesat has struck a deal with Ontario’s government to partly fund its Lightspeed constellation, which will dedicate some of its satellite capacity to improving connectivity in the Canadian province.
+
+        The Ottawa, Ontario-headquartered satellite operator said the five-year agreement is worth 109 million Canadian dollars ($87 million), and focuses on extending high-speed internet and cellular networks to unserved and underserved communities.
+        
+        Lightspeed, the low Earth orbit broadband constellation that Telesat aims to bring into service in 2023, will offer internet service providers and cellular operators substantially reduced rates for part of its capacity under the plan.</p>
+      <p>Telesat has a similar arrangement with Canada’s federal government, worth 600 million Canadian dollars, to subsidize broadband services in rural communities.
+
+        As part of the deal announced Aug. 6, Telesat will increase its Ontario-based staff by around 35% to about 400 highly skilled jobs.
+        
+        The company also committed to investing 20 million Canadian dollars to build out facilities in the province, including a new gateway landing station and an expanded corporate headquarters.</p>
+    </div>
+  </article>
+    <!-- ################################################################################################ -->
+
+   <!-- ################################################################################################ -->
+   <article>
+    <div class="content three_quarter" id="7629"> 
+      <h1>India’s economy showing positive indicators of high growth rate: PM Modi</h1>
+      <time class="font-xs block btmspace-10">6<sup>th</sup> AUG 2021</time>
+      <img class="imgr borderedbox inspace-5" src="{% static 'images/demo/modiji.jpeg' %}" alt="">
+      <p>India’s economy is not only showing signs of recovery but also positive indicators of high growth rate, Prime Minister Narendra Modi said on Friday.Although the future expectations index rose to 104 from 96.4, suggesting optimism about the year-ahead prospects, it’s unlikely to result in higher consumer spending.</p>
+      <p>Modi urged the industry and exporters to take advantage of opportunities created in the post-Covid world, explore new destinations and expand India’s export basket to achieve the $400 billion target.The latest survey came as the RBI’s Monetary Policy Committee kept interest rates unchanged at a record-low to support an economy still struggling to recover from the impact of pandemic curbs. With forecasters warning of a third wave, any new restrictions could spell more bad news for the country, where private consumption makes up some 60% of gross domestic product.</p>
+    </div>
+  </article>
+    <!-- ################################################################################################ -->
+
+  <!-- ################################################################################################ -->
+  <article>
+    <div class="content three_quarter" id="7630"> 
+      <h1>Tokyo 2020: Neeraj Chopra soars to end generations of heartache</h1>
+      <time class="font-xs block btmspace-10">6<sup>th</sup> AUG 2021</time>
+      <img class="imgr borderedbox inspace-5" src="{% static 'images/demo/neeraj.jpeg' %}" alt="">
+      <p>More than half a century after Milkha Singh looked back for a fraction of a second and 37 years after PT Usha forgot to dip at the finish line resulting in heart-breaking fourth-place finishes, the glorious flight of Neeraj Chopra’s javelin gave the country its first-ever track and field medal, a gold.</p>
+      <p>Chopra’s speed on the runway, the wide block, long pull of the throwing arm, wonderful alignment of the spear with his motor movements and balance came together on the day it mattered most as he was the supreme thrower at the Olympic Stadium. The Indian looked relaxed in a white headband and fluidly threw 87.03 metres in his first attempt. Chopra’s turn was second on the roster for the first three rounds (after which the bottom four get eliminated) but it was clear he was the man to beat.</p>
+    </div>
+  </article>
+    <!-- ################################################################################################ -->
+
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+
+<div class="wrapper row4">
+  <footer id="footer" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="one_third first">
+      <h6 class="heading">ABOUT US</h6>
+      <p>We are team of xynoshare</p>
+      <p class="btmspace-15">Our Goal is Post The News Which is Really Worth for You And always try to provide Rich Content. Well in This Time its New But time to time we will grow with our hardwork.</p>
+      <ul class="faico clear">
+        <li><a class="faicon-facebook" href="http://facebook.com/sailendradash"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="faicon-twitter" href="http://twitter.com/sailendradash"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="faicon-linkedin" href="https://linkedin.com/in/sailendra-dash-713023218/"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="faicon-google-plus" href="https://plus.google.com/sailendradash"><i class="fa fa-google-plus"></i></a></li>
+      </ul>
+    </div>
+    <div class="one_third">
+      <h6 class="heading">Contact Us</h6>
+      <ul class="nospace linklist contact">
+        <li><i class="fa fa-map-marker"></i>
+          <address>
+          Berhampur &amp; Ganjam, Odisha
+          </address>
+        </li>
+        <li><i class="fa fa-phone"></i> +91 6371172432</li>
+        <li><i class="fa fa-fax"></i> +91 7609055131</li>
+        <li><i class="fa fa-envelope-o"></i> sailendradash@protonmail.com</li>
+      </ul>
+    </div>
+    <div class="one_third">
+      <h6 class="heading">Support Us</h6>
+      <ul class="nospace linklist">
+        <li>
+          <article>
+            <h2 class="nospace font-x1"><a href="#">How You Can Support?</a></h2>
+            <time class="font-xs block btmspace-10">Thursday, 5<sup>th</sup> AUG 2021</time>
+            <p class="nospace">This Site is Running By Public Funds, So For Our Hard Work of Provide You News You can Support Us.&hellip;</p>
+          </article>
+        </li>
+        <footer><a class="btn" href="https://www.paypal.com/paypalme/sailendradash">DONATE&raquo;</a></footer>
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+
+
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p align="center">Copyright &copy; 2021 <a href="#">XYNOSHARE</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="{% static 'layout/scripts/jquery.min.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.backtotop.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
+</body>
+</html>

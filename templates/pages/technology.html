@@ -1,0 +1,169 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Technology | Xynoshare</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+ <header id="header" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h1><a href="home">XYNOSHARE</a></h1>
+      </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li ><a href="home">Home</a></li>
+          <li class="active"><a class="drop" href="news">News | Technology</a>
+            <ul>
+              <li><a href="economy">Economy</a></li>
+              <li><a href="international">International</a></li>
+              <li><a href="technology">Technology</a></li>
+              <li><a href="sports">Sports</a></li>
+            </ul>
+          </li>
+          
+          {% if user.is_authenticated %}
+            <li><a class="drop">{{user.first_name}}</a>
+            <ul>
+              <li><a href="accounts/logout">Logout</a></li>
+            </ul>
+          </li>
+            {% else %}
+            <li><a href="accounts/login">LogIn</a></li>
+            {% endif %}
+
+        </ul>
+      </nav>
+      <!-- ################################################################################################ -->
+    </header>
+
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+
+  {% for article in article %}
+  {% if article.technology %}
+    
+    <!-- ################################################################################################ -->
+    <article>
+    <div class="content three_quarter" id='{{article.id}}'> 
+      <h1>{{article.title}}</h1>
+      <time class="font-xs block btmspace-10">{{article.date}}</time>
+      <img class="imgr borderedbox inspace-5" src="media/{{article.img}}" alt="">
+      <p>{{article.description}}</p>
+    </div>
+  </article>
+    <!-- ################################################################################################ -->
+
+    {% endif %}
+    {% endfor %}
+    
+    <!-- ################################################################################################ -->
+  <article>
+    <div class="content three_quarter"> 
+      <h1>China’s space station emerges as competitor to commercial ventures</h1>
+      <time class="font-xs block btmspace-10">6<sup>th</sup> AUG 2021</time>
+      <img class="imgr borderedbox inspace-5" src="{% static 'images/demo/chinaspace.jpg' %}" alt="">
+      <p>WASHINGTON — Companies involved with commercial activities on the International Space Station or planning their own space stations may face a new competitor in China’s new space station.
+
+        During a presentation at the ISS Research and Development Conference Aug. 4, Jeff Manber, chief executive of Nanoracks, said his company has already lost business to China and its space station.
+        
+        “I lost a customer, my first customer that I lost going to the Chinese space station,” he said. “We’re in a competition now.”
+        
+        He did not identify the customer or what they had planned to do. Nanoracks has several lines of business on the ISS today, from hosting experiments and external payloads to using the station as a platform for launching small satellites.</p>
+      <p>Chinese officials have said they are open to cooperating with other countries regarding use of the station. Ji Qiming, assistant director of the China Manned Space Agency, told China Daily in June that it had selected nine scientific projects from 17 countries to fly on the station, and was working with the United Nations Office for Outer Space Affairs to identify others. That could also include flying astronauts from other countries to the station.</p>
+    </div>
+  </article>
+    <!-- ################################################################################################ -->
+
+<!-- ################################################################################################ -->
+    <article>
+    <div class="content three_quarter"> 
+      <h1>Airtel Says Service Deactivation Message Was Sent Wrongly to Some Delhi Users</h1>
+      <time class="font-xs block btmspace-10">6<sup>th</sup> AUG 2021</time>
+      <img class="imgr borderedbox inspace-5" src="{% static 'images/demo/airtel.png' %}" alt="">
+      <p>Airtel on Friday wrongly informed some of its customers about the deactivation of their services and discontinuation of outgoing calls on their numbers. The telco had sent an SMS message asking the affected customers to recharge their accounts to continue their outgoing calls. However, Airtel later clarified to the users that the message was sent due to a technical error. Gadgets 360 reached out to the operator for clarity on the issue and was informed that it occurred specifically for some users in the Delhi region and didn't impact Airtel customers in other parts of the country.</p>
+      <p>“Your outgoing services have been discontinued. To continue, Click airtel.in/prepaid-recharge or dial *121*51#,” Airtel had said in the original text message.Hours after its circulation, the operator generated a clarification saying that the wrong message about the deactivation of services might have been received due to a technical problem. It also asked the affected customers to ignore the content of the message and apologised for the inconvenience caused.</p>
+    </div>
+  </article>
+    <!-- ################################################################################################ -->
+
+<!-- ################################################################################################ -->
+  <article>
+    <div class="content three_quarter"> 
+      <h1>Amazon Orders All US Employees to Mask Up at Work as COVID-19 Delta Variant Cases Surge</h1>
+      <time class="font-xs block btmspace-10">6<sup>th</sup> AUG 2021</time>
+      <img class="imgr borderedbox inspace-5" src="{% static 'images/demo/amazon.png' %}" alt="">
+      <p>Amazon.com has ordered all US employees to wear a mask at work regardless of their vaccination status, as the highly infectious Delta variant of COVID-19 sweeps the country.Companies across the United States have tightened their defenses against the virus, after the Delta variant forced the US public health agency to reverse course and insist on even fully vaccinated individuals wearing masks."We are monitoring the situation closely and will continue to follow local government guidance and work closely with leading medical healthcare professionals, gathering their advice and recommendations as we go forward to ensure our buildings are optimized for the safety of our teams," an Amazon spokesperson said in a statement on Friday.</p>
+      <p>Last month, big techs including Alphabet's Google and Facebook asked US employees to get vaccinated to step into offices, while Twitter said it was shutting its reopened offices in the country.Amazon also extended its work-from-home dates for US employees till January 3.Earlier this week, coronavirus cases worldwide surpassed 200 million while US cases stood at 35.62 million on Thursday, according to a Reuters tally.</p>
+    </div>
+  </article>
+    <!-- ################################################################################################ -->
+
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+
+<div class="wrapper row4">
+  <footer id="footer" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="one_third first">
+      <h6 class="heading">ABOUT US</h6>
+      <p>We are team of xynoshare</p>
+      <p class="btmspace-15">Our Goal is Post The News Which is Really Worth for You And always try to provide Rich Content. Well in This Time its New But time to time we will grow with our hardwork.</p>
+      <ul class="faico clear">
+        <li><a class="faicon-facebook" href="http://facebook.com/sailendradash"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="faicon-twitter" href="http://twitter.com/sailendradash"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="faicon-linkedin" href="https://linkedin.com/in/sailendra-dash-713023218/"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="faicon-google-plus" href="https://plus.google.com/sailendradash"><i class="fa fa-google-plus"></i></a></li>
+      </ul>
+    </div>
+    <div class="one_third">
+      <h6 class="heading">Contact Us</h6>
+      <ul class="nospace linklist contact">
+        <li><i class="fa fa-map-marker"></i>
+          <address>
+          Berhampur &amp; Ganjam, Odisha
+          </address>
+        </li>
+        <li><i class="fa fa-phone"></i> +91 6371172432</li>
+        <li><i class="fa fa-fax"></i> +91 7609055131</li>
+        <li><i class="fa fa-envelope-o"></i> sailendradash@protonmail.com</li>
+      </ul>
+    </div>
+    <div class="one_third">
+      <h6 class="heading">Support Us</h6>
+      <ul class="nospace linklist">
+        <li>
+          <article>
+            <h2 class="nospace font-x1"><a href="#">How You Can Support?</a></h2>
+            <time class="font-xs block btmspace-10">Thursday, 5<sup>th</sup> AUG 2021</time>
+            <p class="nospace">This Site is Running By Public Funds, So For Our Hard Work of Provide You News You can Support Us.&hellip;</p>
+          </article>
+        </li>
+        <footer><a class="btn" href="https://www.paypal.com/paypalme/sailendradash">DONATE&raquo;</a></footer>
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+
+
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p align="center">Copyright &copy; 2021 <a href="#">XYNOSHARE</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="{% static 'layout/scripts/jquery.min.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.backtotop.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
+</body>
+</html>

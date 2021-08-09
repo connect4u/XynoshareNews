@@ -1,0 +1,295 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>XYNOSHARE</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-image:url('{% static 'images/demo/backgrounds/graphical-modern-digital-world-news-background_1412-570.jpg' %}');"> 
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h1><a href="home">XYNOSHARE</a></h1>
+      </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li class="active"><a href="home">Home</a></li>
+          <li><a class="drop" href="news">News</a>
+            <ul>
+              <li><a href="economy">Economy</a></li>
+              <li><a href="international">International</a></li>
+              <li><a href="technology">Technology</a></li>
+              <li><a href="sports">Sports</a></li>
+            </ul>
+          </li>
+
+            {% if user.is_authenticated %}
+            <li><a class="drop">{{user.first_name}}</a>
+            <ul>
+              <li><a href="accounts/logout">Logout</a></li>
+            </ul>
+          </li>
+            {% else %}
+            <li><a href="accounts/login">LogIn</a></li>
+            {% endif %}
+        </ul>
+      </nav>
+      <!-- ################################################################################################ -->
+    </header>
+  </div>
+  <!-- ################################################################################################ -->
+
+  <div id="pageintro" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="flexslider basicslider">
+      <ul class="slides">
+        {% for article in article %}
+        {% if  article.trend %}
+
+        <li>
+          <article>
+            <p class="heading">LATEST UPDATES</p>
+            <h2 class="heading">{{article.title}}</h2>
+            <p>{{article.short_description}}...</p>
+            <footer>
+              <ul class="nospace inline pushright">
+                <li><a class="btn" href="news#{{article.id}}">View</a></li>
+              </ul>
+            </footer>
+          </article>
+        </li>
+
+        {% endif %}
+        {% endfor %}
+        <li>
+          <article>
+            <p class="heading">LATEST UPDATES</p>
+            <h2 class="heading">Boost exports to $400bn this year: PM to businessmen, envoys</h2>
+            <p>NEW DELHI: PM Narendra Modi on Friday said that the decision to drop the provision of retrospective taxation from the statute.....</p>
+            <footer>
+              <ul class="nospace inline pushright">
+                <li><a class="btn" href="news#7623">View</a></li>
+              </ul>
+            </footer>
+          </article>
+        </li>
+        <li>
+          <article>
+            <p class="heading">LATEST UPDATES</p>
+            <h2 class="heading">Tokyo Olympics 2021 Live Updates: Golfer Aditi Ashok slips to 4th place, one hole left to play</h2>
+            <p>India is eyeing historic medals from golf and athletics, apart from one more in wrestling, as Aditi Ashok, Neeraj Chopra and Bajrang Punia make a final push to turn Tokyo 2020 into India's most succes...</p>
+            <footer>
+              <ul class="nospace inline pushright">
+                <li><a class="btn" href="news#7624">View</a></li>
+              </ul>
+            </footer>
+          </article>
+        </li>
+        <li>
+          <article>
+            <p class="heading">LATEST UPDATES</p>
+            <h2 class="heading">Airtel Says Service Deactivation Message Was Sent Wrongly to Some Delhi Users</h2>
+            <p>Airtel on Friday wrongly informed some of its customers about the deactivation of their services and discontinuation of outgoing...</p>
+            <footer>
+              <ul class="nospace inline pushright">
+                <li><a class="btn" href="news#7625">View</a></li>
+              </ul>
+            </footer>
+          </article>
+        </li>
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </div>
+  <!-- ################################################################################################ -->
+</div>
+<!-- ################################################################################################ -->
+
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="center btmspace-80">
+      <h2 class="heading nospace">BREAKING NEWS</h2>
+      <p class="nospace">News from overall world.</p>
+    </div>
+    <ul class="nospace group">
+
+    {% for article in article %}
+    {% if  article.trend %}
+
+    <li class="one_half first btmspace-30">
+      <article class="group">
+        <div class="one_half first"><a href="news#{{article.id}}"><img src="media/{{article.img}}" alt=""></a></div>
+        <div class="one_half">
+          <h3 class="heading font-x1">{{article.title}}</h3>
+          <p>{{article.short_description}}&hellip;</p>
+          <footer><a href="news#{{article.id}}">Read More &raquo;</a></footer>
+        </div>
+      </article>
+    </li>
+
+    {% endif %}
+    {% endfor %}
+
+      <li class="one_half first btmspace-30">
+        <article class="group">
+          <div class="one_half first"><a href="news#7626"><img src="{% static 'images/demo/amazon.png' %}" alt=""></a></div>
+          <div class="one_half">
+            <h3 class="heading font-x1">Amazon Orders All US Employees to Mask Up at Work as COVID-19 Delta Variant Cases Surge</h3>
+            <p>Amazon.com has ordered all US employees to wear a mask at work regardless of their vaccination status, as the highly infectiou&hellip;</p>
+            <footer><a href="news#7626">Read More &raquo;</a></footer>
+          </div>
+        </article>
+      </li>
+      <li class="one_half first btmspace-30">
+        <article class="group">
+          <div class="one_half first"><a href="news#7627"><img src="{% static 'images/demo/chinaspace.jpg' %}" alt=""></a></div>
+          <div class="one_half">
+            <h3 class="heading font-x1">China’s space station emerges as competitor to commercial ventures</h3>
+            <p>WASHINGTON — Companies involved with commercial activities on the International Space Station or planning their own space stations may face a &hellip;</p>
+            <footer><a href="news#7627">Read More &raquo;</a></footer>
+          </div>
+        </article>
+      </li>
+      <li class="one_half first btmspace-30">
+        <article class="group">
+          <div class="one_half first"><a href="news#7628"><img src="{% static 'images/demo/ontario.jpg' %}" alt=""></a></div>
+          <div class="one_half">
+            <h3 class="heading font-x1">Ontario’s government invests in Lightspeed constellation</h3>
+            <p>TAMPA, Fla. — Telesat has struck a deal with Ontario’s government to partly fund its Lightspeed constellation, which will&hellip;</p>
+            <footer><a href="news#7628">Read More &raquo;</a></footer>
+          </div>
+        </article>
+      </li>
+      <li class="one_half first btmspace-30">
+        <article class="group">
+          <div class="one_half first"><a href="news#7629"><img src="{% static 'images/demo/modiji.jpeg' %}" alt=""></a></div>
+          <div class="one_half">
+            <h3 class="heading font-x1">India’s economy showing positive indicators of high growth rate: PM Modi</h3>
+            <p>India’s economy is not only showing signs of recovery but also positive indicators of high growth rate, Prime&hellip;</p>
+            <footer><a href="news#7629">Read More &raquo;</a></footer>
+          </div>
+        </article>
+      </li>
+    </ul>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+
+<div class="wrapper bgded overlay" style="background-image:url('{% static 'images/demo/backgrounds/graphical-modern-digital-world-news-background_1412-570.jpg' %}');">
+  <section class="hoc container clear"> 
+    <!-- ################################################################################################ -->
+    <div class="btmspace-80 center">
+      <h2 class="heading nospace">CATEGORIES</h2>
+      <p class="nospace">READ NEWS WITH DIFFERENT CATEGORIES</p>
+    </div>
+    <ul class="nospace group">
+      <li class="one_quarter first">
+        <article class="excerpt"><a href="economy"><img src="{% static 'images/demo/economics.jpg' %}" alt=""></a>
+          <div class="excerpttxt">
+            <h6 class="heading font-x1">Economy</h6>
+            <footer><a class="btn" href="economy">Read More &raquo;</a></footer>
+          </div>
+        </article>
+      </li>
+      <li class="one_quarter">
+        <article class="excerpt"><a href="international"><img src="{% static 'images/demo/international.jpg' %}" alt=""></a>
+          <div class="excerpttxt">
+            <h6 class="heading font-x1">International</h6>
+            <footer><a class="btn" href="international">Read More &raquo;</a></footer>
+          </div>
+        </article>
+      </li>
+      <li class="one_quarter">
+        <article class="excerpt"><a href="technology"><img src="{% static 'images/demo/technology.png' %}" alt=""></a>
+          <div class="excerpttxt">
+            <h6 class="heading font-x1">Technology</h6>
+            <footer><a class="btn" href="technology">Read More &raquo;</a></footer>
+          </div>
+        </article>
+      </li>
+      <li class="one_quarter">
+        <article class="excerpt"><a href="sports"><img src="{% static 'images/demo/sports.jpg' %}" alt=""></a>
+          <div class="excerpttxt">
+            <h6 class="heading font-x1">Sports</h6>
+            <footer><a class="btn" href="sports">Read More &raquo;</a></footer>
+          </div>
+        </article>
+      </li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </section>
+</div>
+
+
+<div class="wrapper row4">
+  <footer id="footer" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="one_third first">
+      <h6 class="heading">ABOUT US</h6>
+      <p>We are team of xynoshare</p>
+      <p class="btmspace-15">Our Goal is Post The News Which is Really Worth for You And always try to provide Rich Content. Well in This Time its New But time to time we will grow with our hardwork.</p>
+      <ul class="faico clear">
+        <li><a class="faicon-facebook" href="http://facebook.com/sailendradash"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="faicon-twitter" href="http://twitter.com/sailendradash"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="faicon-linkedin" href="https://linkedin.com/in/sailendra-dash-713023218/"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="faicon-google-plus" href="https://plus.google.com/sailendradash"><i class="fa fa-google-plus"></i></a></li>
+      </ul>
+    </div>
+    <div class="one_third">
+      <h6 class="heading">Contact Us</h6>
+      <ul class="nospace linklist contact">
+        <li><i class="fa fa-map-marker"></i>
+          <address>
+          Berhampur &amp; Ganjam, Odisha
+          </address>
+        </li>
+        <li><i class="fa fa-phone"></i> +91 6371172432</li>
+        <li><i class="fa fa-fax"></i> +91 7609055131</li>
+        <li><i class="fa fa-envelope-o"></i> sailendradash@protonmail.com</li>
+      </ul>
+    </div>
+    <div class="one_third">
+      <h6 class="heading">Support Us</h6>
+      <ul class="nospace linklist">
+        <li>
+          <article>
+            <h2 class="nospace font-x1"><a href="https://www.paypal.com/paypalme/sailendradash">How You Can Support?</a></h2>
+            <time class="font-xs block btmspace-10">Thursday, 5<sup>th</sup> AUG 2021</time>
+            <p class="nospace">This Site is Running By Public Funds, So For Our Hard Work of Provide You News You can Support Us.&hellip;</p>
+          </article>
+        </li>
+        <footer><a class="btn" href="https://www.paypal.com/paypalme/sailendradash">DONATE&raquo;</a></footer>
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p align="center">Copyright &copy; 2021 <a href="#">XYNOSHARE</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="{% static 'layout/scripts/jquery.min.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.backtotop.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.flexslider-min.js' %}"></script>
+</body>
+</html>
