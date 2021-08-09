@@ -80,8 +80,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'xynoshare',
-        'USER': 'connect4u',
-        'PASSWORD': '@Postgres321',
+        'USER': '&&&&&&&&',
+        'PASSWORD': '*******',
         'HOST': 'localhost',
     }
 }
